@@ -78,6 +78,7 @@ header.top p{margin:.4rem 0 0; color:var(--muted); max-width:60ch}
 
 /* Leerlijn */
 .layout{display:grid; grid-template-columns:300px 1fr; gap:2.5rem; align-items:start}
+.layout > *{min-width:0}
 nav.route{position:sticky; top:calc(env(safe-area-inset-top,0px) + 1rem)}
 nav.route ol{list-style:none; margin:0; padding:0; position:relative}
 nav.route ol::before{content:""; position:absolute; left:15px; top:16px; bottom:16px; width:4px; background:var(--rule); border-radius:2px}
@@ -144,9 +145,10 @@ footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--rule); colo
   .stat{text-align:left}
   .layout{grid-template-columns:1fr; gap:1.25rem}
   nav.route{position:static}
-  nav.route ol{display:flex; overflow-x:auto; gap:.25rem; padding-bottom:.4rem}
+  nav.route ol{display:flex; overflow-x:auto; gap:.25rem; padding-bottom:.4rem; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch}
   nav.route ol::before{left:16px; right:16px; top:24px; bottom:auto; height:4px; width:auto}
   .stop{grid-template-columns:1fr; justify-items:center; text-align:center; width:96px; padding:.4rem .2rem}
+  nav.route li{flex:0 0 auto; scroll-snap-align:center}
   .stop .ct{display:none}
   .stop .nm{font-size:.78rem; font-weight:400}
   .lbody{padding-left:1.1rem}
